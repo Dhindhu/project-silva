@@ -1,0 +1,158 @@
+{
+  "name": {
+    "type": "PERSON",
+    "level_1": {
+      "transform": "noTransform()"
+    },
+    "level_2": {
+      "transform": "personName()"
+    },
+    "level_3": {
+      "transform": "personName()"
+    }
+  },
+  "phone": {
+    "type": "PHONE_NUMBER",
+    "level_1": {
+      "transform": "noTransform()"
+    },
+    "level_2": {
+      "transform": "noTransform()"
+    },
+    "level_3": {
+      "transform": "phoneNumber()"
+    }
+  },
+  "email": {
+    "type": "OTHER",
+    "level_1": {
+      "transform": "noTransform()"
+    },
+    "level_2": {
+      "transform": "noTransform()"
+    },
+    "level_3": {
+      "transform": "unknownTranform()"
+    }
+  },
+  "address": {
+    "type": "LOCATION",
+    "level_1": {
+      "transform": "noTransform()"
+    },
+    "level_2": {
+      "transform": "location()"
+    },
+    "level_3": {
+      "transform": "location()"
+    }
+  },
+  "postalZip": {
+    "type": "ADDRESS",
+    "level_1": {
+      "transform": "noTransform()"
+    },
+    "level_2": {
+      "transform": "noTransform()"
+    },
+    "level_3": {
+      "transform": "unknownTranform()"
+    }
+  },
+  "region": {
+    "type": "UNKNOWN",
+    "level_1": {
+      "transform": "noTransform()"
+    },
+    "level_2": {
+      "transform": "noTransform()"
+    },
+    "level_3": {
+      "transform": "unknownTranform()"
+    }
+  },
+  "country": {
+    "type": "LOCATION",
+    "level_1": {
+      "transform": "noTransform()"
+    },
+    "level_2": {
+      "transform": "location()"
+    },
+    "level_3": {
+      "transform": "location()"
+    }
+  },
+  "password": {
+    "type": "OTHER",
+    "level_1": {
+      "transform": "noTransform()"
+    },
+    "level_2": {
+      "transform": "noTransform()"
+    },
+    "level_3": {
+      "transform": "unknownTranform()"
+    }
+  },
+  "notes": {
+    "type": "UNKNOWN",
+    "level_1": {
+      "transform": "noTransform()"
+    },
+    "level_2": {
+      "transform": "noTransform()"
+    },
+    "level_3": {
+      "transform": "unknownTranform()"
+    }
+  },
+  "company": {
+    "type": "UNKNOWN",
+    "level_1": {
+      "transform": "noTransform()"
+    },
+    "level_2": {
+      "transform": "noTransform()"
+    },
+    "level_3": {
+      "transform": "unknownTranform()"
+    }
+  },
+  "bank_account_iban": {
+    "type": "OTHER",
+    "level_1": {
+      "transform": "noTransform()"
+    },
+    "level_2": {
+      "transform": "noTransform()"
+    },
+    "level_3": {
+      "transform": "unknownTranform()"
+    }
+  },
+  "credit_card_number": {
+    "type": "NUMBER",
+    "level_1": {
+      "transform": "noTransform()"
+    },
+    "level_2": {
+      "transform": "noTransform()"
+    },
+    "level_3": {
+      "transform": "number()"
+    }
+  },
+  "credit_card_cvv": {
+    "type": "NUMBER",
+    "level_1": {
+      "transform": "noTransform()"
+    },
+    "level_2": {
+      "transform": "noTransform()"
+    },
+    "level_3": {
+      "transform": "number()"
+    }
+  }
+}

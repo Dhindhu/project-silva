@@ -1,0 +1,9 @@
+const SUPABASE_KEY =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJxYnlyZXRhdHdwZ21xbG1jcnBpIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDkzNTYxNTMsImV4cCI6MTk2NDkzMjE1M30.zrcDTEeDjgb0_M3PgCtCnyh4Y9ls12h6jwulbyGNXbE";
+
+const SUPABASE_SERVICE_KEY =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJxYnlyZXRhdHdwZ21xbG1jcnBpIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY0OTM1NjE1MywiZXhwIjoxOTY0OTMyMTUzfQ.teSCTcd0Vyh4sb0SYrfcwM2OyxdarnuVHYEp2S08mZU";
+
+const SUPABASE_URL = "https://rqbyretatwpgmqlmcrpi.supabase.co";
+
+module.exports = { SUPABASE_KEY, SUPABASE_SERVICE_KEY, SUPABASE_URL };
