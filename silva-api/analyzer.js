@@ -85,66 +85,66 @@ const main = async () => {
   // purge useless column
   delete allData.id;
 
-  // const columnTypes = await Promise.all(
-  //   Object.keys(allData).map(async (key) => {
-  //     const columnContent = allData[key];
-  //     const nRows = Math.ceil(0.15 * columnContent.length);
-  //     const sampleValues = getNRandom(columnContent, nRows);
+  const columnTypes = await Promise.all(
+    Object.keys(allData).map(async (key) => {
+      const columnContent = allData[key];
+      const nRows = Math.ceil(0.15 * columnContent.length);
+      const sampleValues = getNRandom(columnContent, nRows);
 
-  //     // console.log(sampleValues);
+      // console.log(sampleValues);
 
-  //     const document = {
-  //       content: sampleValues.join(", "),
-  //       type: "PLAIN_TEXT",
-  //     };
+      const document = {
+        content: sampleValues.join(", "),
+        type: "PLAIN_TEXT",
+      };
 
-  //     let textAnalysisResult;
+      let textAnalysisResult;
 
-  //     try {
-  //       textAnalysisResult = (await client.analyzeEntities({ document }))[0];
-  //     } catch (e) {
-  //       // console.log("Error for column", key, "Error is: ", e);
-  //     }
+      try {
+        textAnalysisResult = (await client.analyzeEntities({ document }))[0];
+      } catch (e) {
+        console.log("Error for column", key, "Error is: ", e);
+      }
 
-  //     if (textAnalysisResult) {
-  //       const entityTypes = [...textAnalysisResult.entities]
-  //         .sort((a, b) => b.salience - a.salience) //
-  //         .map((entity) => {
-  //           return entity.type;
-  //         });
+      if (textAnalysisResult) {
+        const entityTypes = [...textAnalysisResult.entities]
+          .sort((a, b) => b.salience - a.salience) //
+          .map((entity) => {
+            return entity.type;
+          });
 
-  //       const entityType = _.head(
-  //         _(entityTypes.slice(0, Math.ceil(entityTypes.length / 4)))
-  //           .countBy()
-  //           .entries()
-  //           .maxBy(_.last)
-  //       );
+        const entityType = _.head(
+          _(entityTypes.slice(0, Math.ceil(entityTypes.length / 4)))
+            .countBy()
+            .entries()
+            .maxBy(_.last)
+        );
 
-  //       return [key, entityType];
-  //     }
-  //     return [key, "UNKNOWN"];
-  //   })
-  // );
+        return [key, entityType];
+      }
+      return [key, "UNKNOWN"];
+    })
+  );
 
-  const columnTypes = [
-    ["name", "PERSON"],
-    ["phone", "PHONE_NUMBER"],
-    ["email", "OTHER"],
-    ["address", "LOCATION"],
-    ["postalZip", "ADDRESS"],
-    ["region", "UNKNOWN"],
-    ["country", "LOCATION"],
-    ["password", "OTHER"],
-    ["notes", "UNKNOWN"],
-    ["company", "UNKNOWN"],
-    ["bank_account_iban", "OTHER"],
-    ["credit_card_number", "NUMBER"],
-    ["credit_card_cvv", "NUMBER"],
-  ];
+  // const columnTypes = [
+  //   ["name", "PERSON"],
+  //   ["phone", "PHONE_NUMBER"],
+  //   ["email", "OTHER"],
+  //   ["address", "LOCATION"],
+  //   ["postalZip", "ADDRESS"],
+  //   ["region", "UNKNOWN"],
+  //   ["country", "LOCATION"],
+  //   ["password", "OTHER"],
+  //   ["notes", "UNKNOWN"],
+  //   ["company", "UNKNOWN"],
+  //   ["bank_account_iban", "OTHER"],
+  //   ["credit_card_number", "NUMBER"],
+  //   ["credit_card_cvv", "NUMBER"],
+  // ];
 
   console.log(columnTypes);
 
-  generateJson(columnTypes);
+  // generateJson(columnTypes);
 };
 
 main();
