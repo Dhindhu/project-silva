@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "analyze-ps": "$env:GOOGLE_APPLICATION_CREDENTIALS=\"gapikeys.json\" && node analyzer.js"
+    "analyze-ps": "set GOOGLE_APPLICATION_CREDENTIALS=gapikeys.json&&node analyzer.js"
   },
   "author": "",
   "license": "ISC",

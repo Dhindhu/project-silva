@@ -103,7 +103,7 @@ const main = async () => {
       try {
         textAnalysisResult = (await client.analyzeEntities({ document }))[0];
       } catch (e) {
-        console.log("Error for column", key, "Error is: ", e);
+        // console.log("Error for column", key, "Error is: ", e);
       }
 
       if (textAnalysisResult) {
