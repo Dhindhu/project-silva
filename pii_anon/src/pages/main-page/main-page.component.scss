@@ -1,0 +1,45 @@
+.options {
+  padding: 12px;
+  border-bottom: 1px solid var(--border-a);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.title {
+  font-size: 20px;
+  font-weight: 600;
+}
+.section-a {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--border-a);
+}
+.members {
+  border-collapse: collapse;
+
+  width: 100%;
+  @apply shadow-md;
+  th,
+  td {
+    text-align: start;
+    padding: 12px 12px;
+  }
+  th {
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  td {
+    font-size: 14px;
+  }
+  .heading {
+    background-color: var(--background-a);
+  }
+  .person {
+    cursor: pointer;
+    border-top: 1px solid var(--border-a);
+    &:hover {
+      background-color: var(--background-f);
+    }
+  }
+}

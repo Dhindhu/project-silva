@@ -1,0 +1,30 @@
+.members {
+  border-collapse: collapse;
+
+  width: 100%;
+  @apply shadow-md;
+  overflow-x: auto;
+  th,
+  td {
+    text-align: start;
+    padding: 12px 12px;
+  }
+  th {
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  td {
+    font-size: 13px;
+  }
+  .heading {
+    background-color: var(--background-a);
+  }
+  .person {
+    cursor: pointer;
+    border-top: 1px solid var(--border-a);
+    &:hover {
+      background-color: var(--background-f);
+    }
+  }
+}

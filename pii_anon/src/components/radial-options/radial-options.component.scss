@@ -1,0 +1,42 @@
+.radial-options {
+  border-radius: 8px;
+  border: 1px solid var(--border-a);
+  overflow: hidden;
+  .o {
+    display: inline-block;
+  }
+  .active {
+    background-color: var(--background-a);
+    .icon {
+      display: block;
+    }
+  }
+  .option {
+    cursor: pointer;
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+    &:last-child {
+      border-bottom: none;
+    }
+    .icon {
+      display: none;
+    }
+    &:hover {
+      background-color: var(--background-f);
+    }
+    padding: 12px;
+    border-bottom: 1px solid var(--border-a);
+
+    .title {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .description {
+      font-size: 13px;
+      color: var(--text-c);
+      font-weight: 600;
+    }
+  }
+}

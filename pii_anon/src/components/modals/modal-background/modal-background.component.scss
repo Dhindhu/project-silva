@@ -1,0 +1,76 @@
+.modal-background {
+  width: 100vw;
+  height: var(--app-height);
+  display: block;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1000;
+  background-color: rgb(38 38 38/0.6);
+  display: flex;
+  overflow: auto;
+  backdrop-filter: blur(8px);
+}
+.fwrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.modal-body {
+  margin: 24px;
+  max-width: 700px;
+  width: 100%;
+  display: block;
+  background-color: var(--background-b);
+  border: 1px solid var(--border-a);
+  overflow: auto;
+  border-radius: 16px;
+  // padding: 24px;
+
+  transform-origin: center;
+  animation: bounce-in 180ms cubic-bezier(0.175, 0.885, 0.4, 1.1);
+  transform: scale(1, 1);
+}
+.modal-header {
+  position: sticky;
+  top: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: var(--background-b);
+
+  border-bottom: 1px solid var(--border-a);
+}
+.close {
+  cursor: pointer;
+  height: 32px;
+  width: 32px;
+  padding-top: 6px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+
+  background-color: #171717;
+  &:hover {
+    background-color: var(--border-a);
+  }
+}
+.content {
+  // position: relative;
+  // height: 100%;
+  // width: 100%;
+}
+@media only screen and (max-width: 600px) {
+  .modal-body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    border-radius: 0px;
+  }
+}

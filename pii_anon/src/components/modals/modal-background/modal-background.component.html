@@ -1,0 +1,19 @@
+<div class="modal-background" (click)="close()">
+  <div class="fwrapper">
+    <div class="modal-body" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <p class="modal-title">{{ mtitle }}</p>
+        <div class="close" (click)="close()">
+          <svg-icon
+            src="assets/close-outline.svg"
+            [svgStyle]="{ width: '20px', height: '20px' }"
+          ></svg-icon>
+        </div>
+      </div>
+
+      <div class="content">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+</div>

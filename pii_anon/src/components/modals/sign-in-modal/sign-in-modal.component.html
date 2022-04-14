@@ -1,0 +1,20 @@
+<modal-background [close]="closer" mtitle="{{ state ? 'Sign Up' : 'Sign In' }}">
+  <div class="main-body">
+    <div class="i">
+      <p class="placeholder">Email</p>
+      <input type="email" class="email" autocomplete="off" />
+    </div>
+    <div>
+      <p class="placeholder">Choose an access level</p>
+
+      <radial-options (active)="setAccessLevel($event)"></radial-options>
+    </div>
+
+    <button (click)="signIn()">Sign In</button>
+
+    <p class="terms">
+      By clicking on Sign In with Google or the Sign Inbutton, you agree to our
+      terms and conditions
+    </p>
+  </div>
+</modal-background>

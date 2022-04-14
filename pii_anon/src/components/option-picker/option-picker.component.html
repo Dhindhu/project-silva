@@ -1,0 +1,14 @@
+<div class="picker">
+  <div class="selected" (click)="toggle()">
+    {{ selected
+    }}<svg-icon
+      src="assets/chevron-down-outline.svg"
+      [svgStyle]="{ width: '16px', 'padding-top': '6px' }"
+    ></svg-icon>
+  </div>
+  <div class="choices" *ngIf="isOpen">
+    <div class="choice" *ngFor="let item of choices" (click)="select(item)">
+      {{ item }}
+    </div>
+  </div>
+</div>

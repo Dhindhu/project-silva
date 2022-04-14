@@ -1,0 +1,22 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+
+  gap: 4px;
+}
+
+.crumb {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 2px 8px;
+  font-weight: 400;
+  font-size: 13px;
+
+  border-radius: 4px;
+
+  &:hover {
+    background-color: var(--background-c);
+    @apply sm-shadow;
+  }
+}

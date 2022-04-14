@@ -1,0 +1,45 @@
+.sign-in-btn,
+.sign-in-with-google {
+  display: flex;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 6px;
+  background-color: white;
+  color: black;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.or {
+  position: relative;
+  text-align: center;
+  hr {
+    border: none;
+    border-bottom: 1px solid var(--text-b);
+  }
+  p {
+    position: relative;
+    display: inline-block;
+    padding: 0px 6px;
+    top: 10px;
+    font-size: 13px;
+    background-color: var(--background-b);
+  }
+}
+.terms {
+  font-size: 13px;
+}
+
+.sinfo {
+  font-size: 13px;
+
+  span {
+    color: var(--green-1);
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

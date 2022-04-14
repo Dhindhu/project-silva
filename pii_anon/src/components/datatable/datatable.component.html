@@ -1,0 +1,10 @@
+<div>
+  <table class="members">
+    <tr class="heading">
+      <th *ngFor="let key of keys">{{ key }}</th>
+    </tr>
+    <tr class="person" *ngFor="let item of filtered">
+      <td *ngFor="let key of keys">{{ getCellValue(key, item) }}</td>
+    </tr>
+  </table>
+</div>

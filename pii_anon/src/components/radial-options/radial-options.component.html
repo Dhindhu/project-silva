@@ -1,0 +1,21 @@
+<div class="radial-options">
+  <div
+    class="option"
+    [class.active]="item === choice"
+    *ngFor="let item of options"
+    (click)="select(item)"
+  >
+    <div class="info">
+      <p class="title">{{ item.title }}</p>
+      <p class="description">
+        {{ item.description }}
+      </p>
+    </div>
+    <div class="icon">
+      <svg-icon
+        src="assets/checkmark-outline.svg"
+        [svgStyle]="{ width: '20px' }"
+      ></svg-icon>
+    </div>
+  </div>
+</div>
