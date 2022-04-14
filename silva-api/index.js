@@ -1,12 +1,15 @@
 const express = require("express");
 const app = express();
 var fs = require('fs');
+const cors = require('cors');
 const { faker } = require('@faker-js/faker');
 const { Console } = require("console");
 const { createClient } = require("@supabase/supabase-js");
 
 
 const APP_PORT = 3300;
+
+app.use(cors());
 
 app.use(express.json());
 
