@@ -1,18 +1,20 @@
 <div>
-  <header>You are logged in with example@gmail.com with Staff access</header>
+  <header>
+    You are logged in as {{ email }} with {{ accessLevelText() }} access
+  </header>
   <div class="main">
     <div class="input-section">
       <p class="placeholder">Search for anything</p>
-      <input placeholder="Search for anything" />
+      <input placeholder="Search for anything" [(ngModel)]="filterQuery" />
     </div>
 
     <p class="title">Unanonimized</p>
     <div class="section-a">
-      <app-datatable></app-datatable>
+      <app-datatable [query]="filterQuery"></app-datatable>
     </div>
-    <p class="title">Administrator View</p>
+    <p class="title">{{ accessLevelText() }} View</p>
     <div class="section-a">
-      <app-datatable></app-datatable>
+      <app-datatable [query]="filterQuery"></app-datatable>
     </div>
   </div>
 </div>

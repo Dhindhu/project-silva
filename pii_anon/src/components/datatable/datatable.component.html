@@ -1,9 +1,17 @@
 <div>
   <table class="members">
     <tr class="heading">
+      <th class="pimage">Avatar</th>
       <th *ngFor="let key of keys">{{ key }}</th>
     </tr>
     <tr class="person" *ngFor="let item of filtered">
+      <td class="img">
+        <img
+          src="https://avatars.dicebear.com/api/big-smile/{{ item.id }}.svg"
+          alt=""
+          class="image"
+        />
+      </td>
       <td *ngFor="let key of keys">{{ getCellValue(key, item) }}</td>
     </tr>
   </table>

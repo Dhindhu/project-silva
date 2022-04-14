@@ -33,13 +33,17 @@ export class DatatableComponent implements OnInit {
     this.filter('');
     this.getColumnLabels();
   }
-
+  @Input()
+  query = '';
   filter(query: string) {
     if (query == '' || query == null) {
       this.filtered = this.data;
       return;
     }
     let found: any[] = searchhash.forValue(this.data, query);
+    if (found.length === 0) {
+      return;
+    }
     this.filtered = found.map((val) => {
       return this.data[val.container];
     });

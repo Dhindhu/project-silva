@@ -34,6 +34,7 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     AngularSvgIconModule.forRoot(),
     SimpleModalModule.forRoot({ container: 'main-app-body' }),
   ],

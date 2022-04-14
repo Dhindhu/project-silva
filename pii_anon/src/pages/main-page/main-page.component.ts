@@ -8,12 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
   constructor(private apiService: ApiService) {}
+  email = '';
 
+  accessLevelText() {
+    if (this.apiService.accessLevel == 1) {
+      return 'Administrator';
+    } else if (this.apiService.accessLevel == 2) {
+      return 'Staff';
+    } else {
+      return 'Developer';
+    }
+  }
   ngOnInit() {}
 
   dataRaw = [];
   dataFiltered = [];
 
+  filterQuery = '';
   async getUnfilteredView() {}
 
   async getFilteredView() {}
