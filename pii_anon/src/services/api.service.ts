@@ -10,10 +10,11 @@ export class ApiService {
 
   email = 'example@gmail.com';
 
-  host = 'localhost:3300';
+  host = 'http://localhost:3300';
   constructor(private http: HttpClient) {}
 
   async requestMembers(level: number) {
+    let result: any[] = [];
     await axios({
       method: 'post',
       url: `${this.host}/api/members`,
@@ -21,7 +22,9 @@ export class ApiService {
         access_level: level,
       },
     }).then((res) => {
-      console.log(res);
+      result = res.data;
     });
+
+    return result;
   }
 }

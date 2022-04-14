@@ -40,7 +40,7 @@ app.post("/api/members", async (req, res) => {
     return;
   }
 
-  const { data: dbData, error } = await supabaseClient.from("pii").select();
+  const { data: dbData, error } = await supabaseClient.from("pii").select().limit(40);
 
   if (error) {
     console.error("Got error while getting data from db.", error);

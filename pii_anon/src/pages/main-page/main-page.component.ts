@@ -19,14 +19,18 @@ export class MainPageComponent implements OnInit {
       return 'Developer';
     }
   }
-  async ngOnInit() {
-    await this.apiService.requestMembers(1);
-  }
+  async ngOnInit() {}
 
-  dataRaw = [];
-  dataFiltered = [];
+  dataRaw: any[] = [];
 
   filterQuery = '';
+
+  searchQuery = '';
+
+  submit() {
+    console.log('submitted');
+    this.filterQuery = this.searchQuery;
+  }
   async getUnfilteredView() {}
 
   async getFilteredView() {}

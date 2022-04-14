@@ -5,7 +5,11 @@
   <div class="main">
     <div class="input-section">
       <p class="placeholder">Search for anything</p>
-      <input placeholder="Search for anything" [(ngModel)]="filterQuery" />
+      <input
+        placeholder="Search for anything"
+        [(ngModel)]="searchQuery"
+        (keydown.enter)="submit()"
+      />
     </div>
 
     <p class="title">Unanonimized</p>
@@ -14,7 +18,7 @@
     </div>
     <p class="title">{{ accessLevelText() }} View</p>
     <div class="section-a">
-      <app-datatable [query]="filterQuery"></app-datatable>
+      <app-datatable [query]="filterQuery" [level]="2"></app-datatable>
     </div>
   </div>
 </div>

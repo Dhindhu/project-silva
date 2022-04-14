@@ -1,15 +1,20 @@
-import { Component, Input, OnInit } from '@angular/core';
-import Fuse from 'fuse.js';
+import {
+  Component,
+  Input,
+  OnInit,
+  OnChanges,
+  SimpleChanges,
+} from '@angular/core';
+import { ApiService } from 'src/services/api.service';
 // import searchhash from 'searchhash'
 declare var require: any;
 const searchhash = require('searchhash');
-// const Fuse = require('fuse.js');
 @Component({
   selector: 'app-datatable',
   templateUrl: './datatable.component.html',
   styleUrls: ['./datatable.component.scss'],
 })
-export class DatatableComponent implements OnInit {
+export class DatatableComponent implements OnInit, OnChanges {
   @Input()
   data: any[] = [
     {
@@ -29,25 +34,33 @@ export class DatatableComponent implements OnInit {
       password: 'AT882393271831479782',
     },
   ];
+  @Input()
+  level = 1;
   filtered: any = [];
   keys: any = [];
-  fuse: any;
-  constructor() {
-    this.getColumnLabels();
-    this.fuse = new Fuse(this.data, {
-      keys: this.keys,
-    });
+  constructor(private apiService: ApiService) {
     this.filter('');
+    this.getColumnLabels();
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    this.filter(changes['query'].currentValue);
   }
   @Input()
   query = '';
   filter(query: string) {
-    let result = this.fuse.search(query);
-    if (result.length === 0) {
+    console.log(query);
+    if (query == '' || query == null) {
       this.filtered = this.data;
       return;
     }
-    this.filtered = result;
+    let found: any[] = searchhash.forValue(this.data, query);
+    if (found.length === 0) {
+      this.filtered = [];
+      return;
+    }
+    this.filtered = found.map((val) => {
+      return this.data[val.container];
+    });
   }
   getColumnLabels() {
     this.keys = Object.keys(this.data[0]);
@@ -56,5 +69,9 @@ export class DatatableComponent implements OnInit {
   getCellValue(label: string, row: any) {
     return row[label];
   }
-  ngOnInit() {}
+  async ngOnInit() {
+    this.data = await this.apiService.requestMembers(this.level);
+    this.getColumnLabels();
+    this.filtered = this.data;
+  }
 }
