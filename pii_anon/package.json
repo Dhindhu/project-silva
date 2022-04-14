@@ -19,6 +19,8 @@
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
     "angular-svg-icon": "^13.0.0",
+    "axios": "^0.26.1",
+    "fuse.js": "^6.5.3",
     "ngx-simple-modal": "^1.4.17",
     "rxjs": "~7.5.0",
     "searchhash": "^1.2.9",

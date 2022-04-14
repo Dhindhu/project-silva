@@ -19,7 +19,9 @@ export class MainPageComponent implements OnInit {
       return 'Developer';
     }
   }
-  ngOnInit() {}
+  async ngOnInit() {
+    await this.apiService.requestMembers(1);
+  }
 
   dataRaw = [];
   dataFiltered = [];

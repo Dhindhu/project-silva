@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+import Fuse from 'fuse.js';
 // import searchhash from 'searchhash'
 declare var require: any;
 const searchhash = require('searchhash');
+// const Fuse = require('fuse.js');
 @Component({
   selector: 'app-datatable',
   templateUrl: './datatable.component.html',
@@ -29,24 +31,23 @@ export class DatatableComponent implements OnInit {
   ];
   filtered: any = [];
   keys: any = [];
+  fuse: any;
   constructor() {
-    this.filter('');
     this.getColumnLabels();
+    this.fuse = new Fuse(this.data, {
+      keys: this.keys,
+    });
+    this.filter('');
   }
   @Input()
   query = '';
   filter(query: string) {
-    if (query == '' || query == null) {
+    let result = this.fuse.search(query);
+    if (result.length === 0) {
       this.filtered = this.data;
       return;
     }
-    let found: any[] = searchhash.forValue(this.data, query);
-    if (found.length === 0) {
-      return;
-    }
-    this.filtered = found.map((val) => {
-      return this.data[val.container];
-    });
+    this.filtered = result;
   }
   getColumnLabels() {
     this.keys = Object.keys(this.data[0]);

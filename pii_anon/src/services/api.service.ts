@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import axios from 'axios';
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +14,14 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   async requestMembers(level: number) {
-    this.http.get(`${this.host}/api/members?access_level=${level}`);
+    await axios({
+      method: 'post',
+      url: `${this.host}/api/members`,
+      data: {
+        access_level: level,
+      },
+    }).then((res) => {
+      console.log(res);
+    });
   }
 }
