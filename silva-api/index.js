@@ -17,6 +17,7 @@ const getFakeValue = (rule) => {
     "location()": faker.address.streetAddress,
     "number()": () => faker.datatype.number({ min: 10, max: 999999 }),
     "phoneNumber()": faker.phone.phoneNumber,
+    "email()": faker.internet.email,
     "unknownTranform()": () => faker.lorem.words(10)
   }
 
