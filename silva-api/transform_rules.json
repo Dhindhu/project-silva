@@ -32,7 +32,7 @@
       "transform": "noTransform()"
     },
     "level_3": {
-      "transform": "unknownTranform()"
+      "transform": "email()"
     }
   },
   "address": {
